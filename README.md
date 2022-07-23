@@ -1,1 +1,1 @@
-* Demonstration ForgeRock platform config for SBAT
+# Demonstration ForgeRock platform config for SBAT
