@@ -1,0 +1,60 @@
+{
+  "name": "AISP Policy",
+  "active": true,
+  "description": "",
+  "resources": [
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts?page=*",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/balances",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/balances?page=*",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/balances",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/transactions",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/transactions?page=*",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/transactions",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/transactions?page=*",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/beneficiaries",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/beneficiaries?page=*",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/beneficiaries",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/direct-debits",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/direct-debits?page=*",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/direct-debits",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/standing-orders",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/standing-orders?page=*",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/standing-orders",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/products",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/products?page=*",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/product",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/offers",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/offers?page=*",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/offers",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/party",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/parties",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/party",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/scheduled-payments",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/scheduled-payments?page=*",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/scheduled-payments",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/statements",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/statements?page=*",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/statements",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/statements?page=*",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/statements/*",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/statements/*/file",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/statements/*/transactions",
+    "{{RS_BASE_URL}}/open-banking/*/aisp/accounts/*/statements/*/transactions?page=*"
+  ],
+  "applicationName": "Open Banking",
+  "actionValues": {
+    "GET": true
+  },
+  "subject": {
+    "type": "JwtClaim",
+    "claimName": "intent_type",
+    "claimValue": "aisp"
+  },
+  "condition": {
+    "type": "Script",
+    "scriptId": "ob-policy-eval"
+  },
+  "resourceTypeUuid": "76656a38-5f8e-401b-83aa-4ccb74ce88d2"
+}
